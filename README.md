@@ -10,4 +10,4 @@ https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D0%B2%
 
 Task from https://stepik.org/lesson/1211398/step/2
 
-Author Dlitrii Banov
+Author Dmitrii Banov
