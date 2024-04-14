@@ -11,7 +11,7 @@ def load_data():
     Returns:
         DataFrame: DataFrame с данными о средней зарплате и инфляции.
     """
-    return pd.read_csv("infl1404.csv")
+    return pd.read_csv("infl1404Co.csv")
 
 # Загрузка данных
 df = load_data()
@@ -62,6 +62,7 @@ total_salary_fig.update_layout(
     hovermode='x'
 )
 
+
 # Отображение графика
 st.plotly_chart(total_salary_fig)
 
@@ -84,3 +85,23 @@ inflation_fig.update_layout(
 # Отображение графика
 st.plotly_chart(inflation_fig)
 
+#----------------------------
+
+# Создание графика
+gdp_fig = go.Figure()
+
+# Добавляем данные о средней зарплате в секторе "GDP_Russia"
+gdp_fig.add_trace(go.Scatter(x=df.columns[1:], y=df.loc['GDP_Russia'][1:], mode='lines', name='GDP Russia'))
+
+# Настройка внешнего вида графика
+gdp_fig.update_layout(
+  title='GDP Russia (2000-2023)',
+  xaxis_title='Год',
+  yaxis_title='Зарплата',
+  xaxis=dict(tickangle=45),
+  yaxis=dict(gridcolor='lightgray'),
+  hovermode='x'
+)
+
+# Отображение графика
+st.plotly_chart(gdp_fig)
